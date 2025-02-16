@@ -1,5 +1,5 @@
 package service;
-import org.example.Order;
+import model.Order;
 
 public class KitchenService {
     public void prepareFood(Order order) {

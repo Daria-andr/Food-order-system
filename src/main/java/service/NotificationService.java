@@ -1,6 +1,6 @@
 package service;
 
-import org.example.Order;
+import model.Order;
 
 public class NotificationService {
     public void notifyCustomer(Order order) {
