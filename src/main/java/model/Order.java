@@ -14,7 +14,12 @@ public class Order {
     public String getOrderId() { return orderId; }
     public String getCustomerName() { return customerName; }
     public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public void setStatus(String status) {
+        if (!status.equals("Pending") && !status.equals("Cooking") && !status.equals("Ready")) {
+            throw new IllegalArgumentException("Incorrect order status: " + status);
+        }
+        this.status = status;
+    }
 
     @Override
     public String toString() {

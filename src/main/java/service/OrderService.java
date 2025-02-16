@@ -18,6 +18,10 @@ public class OrderService {
     }
 
     public void placeOrder(String orderId, String customerName, String dish) {
+        if (customerName == null || customerName.isBlank()) {
+            throw new IllegalArgumentException("Customer name cannot be empty!");
+        }
+
         Order order = new Order(orderId, customerName);
         orders.put(orderId, order);
         System.out.println(" New order: " + order);
@@ -34,6 +38,8 @@ public class OrderService {
         if (orders.containsKey(orderId)) {
             orders.remove(orderId);
             System.out.println("The order " + orderId + " is canceled!");
+        } else {
+            System.out.println("Error: order " + orderId + " not found!");
         }
     }
 }
