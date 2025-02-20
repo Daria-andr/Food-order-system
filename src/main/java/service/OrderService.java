@@ -38,8 +38,6 @@ public class OrderService {
         if (orders.containsKey(orderId)) {
             orders.remove(orderId);
             System.out.println("The order " + orderId + " is canceled!");
-        } else {
-            System.out.println("Error: order " + orderId + " not found!");
         }
     }
 }
